@@ -15,6 +15,13 @@ function newItem(url, left, bottom) {
     })
 }
 
+function bkgd(url, left, bottom, width, height) {
+    for (let h = 0; h < height; h++) {
+        for (let w = 0; w < width; w++){
+            newImage(url,left + w * 100, bottom + h *100)
+        }
+    }
+}
 
 
 newImage('assets/green-character.gif', 100, 100)
@@ -27,3 +34,9 @@ newItem('assets/sword.png', 500, 405)
 newItem('assets/sheild.png', 165, 185)
 newItem('assets/staff.png',  600, 100)
 
+if(window.innerHeight*.6 > 500) {
+    grassHieght = window.innerHeight*.6
+} else {grassHieght = 500}
+skyHeight = window.innerHeight - grassHieght
+
+bkgd('assets/grass.png', 0, 0, window.innerWidth/100, grassHieght/100)
